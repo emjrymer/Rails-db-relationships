@@ -1,0 +1,18 @@
+<h1>Listing Dog Owners</h1>
+
+<%= link_to 'Add new Owner', owners_new_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Profession</th>
+  </tr>
+  <% @owners.each do |owner| %>
+  <tr>
+    <td><%= owner.name %></td>
+    <td><%= owner.profession %></td>
+    <td><%= link_to 'Show', owner_path(owner) %></td>
+    <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
+  </tr>
+  <% end %>
+</table>
