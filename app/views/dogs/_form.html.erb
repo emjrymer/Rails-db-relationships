@@ -1,0 +1,15 @@
+<%= form_with(model: [ @owner, @owner.dogs.build ], local: true) do |form| %>
+<p>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</p>
+
+<p>
+  <%= form.label :color %>
+  <%= form.text_field :color %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+<% end %>

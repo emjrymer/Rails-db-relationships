@@ -1,0 +1,16 @@
+<p>
+  <strong>Name:</strong>
+  <%= dog.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= dog.color %>
+</p>
+
+<p>
+  <%= link_to 'edit', edit_owner_dog_path([dog.owner, dog]) %>
+  <%= link_to 'remove', [dog.owner, dog],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>

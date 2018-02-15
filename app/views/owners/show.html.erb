@@ -7,6 +7,12 @@
   <strong>Profession:</strong>
   <%= @owner.profession %>
 </p>
+<%= link_to 'Edit Owner Info', edit_owner_path(@owner) %>
 
-<%= link_to 'Edit', edit_owner_path(@owner) %><br>
+<h2>Dogs</h2>
+<%= render @owner.dogs %>
+
+<h2>Add a dog</h2>
+<%= render 'dogs/form' %>
+
 <%= link_to 'Back', owners_path %>

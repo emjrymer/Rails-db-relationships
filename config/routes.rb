@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :owners
+  resources :owners do
+    resources :dogs
+  end
 
   resources :articles do
     resources :comments
