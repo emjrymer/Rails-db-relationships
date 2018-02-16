@@ -12,7 +12,9 @@
     <td><%= owner.name %></td>
     <td><%= owner.profession %></td>
     <td><%= link_to 'Show', owner_path(owner) %></td>
-    <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
+    <td><%= link_to 'Delete', owner_path(owner),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
 </table>

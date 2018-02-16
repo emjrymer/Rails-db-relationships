@@ -9,7 +9,6 @@
 </p>
 
 <p>
-  <%= link_to 'edit', edit_owner_dog_path([dog.owner, dog]) %>
   <%= link_to 'remove', [dog.owner, dog],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>

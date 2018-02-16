@@ -5,16 +5,6 @@ class DogsController < ApplicationController
     redirect_to owner_path(@owner)
   end
 
-  def edit
-    @owner = Owner.find(params[:owner_id])
-    @dog = @owner.dogs.find(params[:id])
-    if @dog.update(dog_params)
-      redirect_to @owner
-    else
-      render 'edit'
-    end
-  end
-
   def destroy
     @owner = Owner.find(params[:owner_id])
     @dog = @owner.dogs.find(params[:id])
