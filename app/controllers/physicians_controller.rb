@@ -3,18 +3,42 @@ class PhysiciansController < ApplicationController
     @physicians = Physician.all
   end
 
+  def show
+    @physician = Physician.find(params[:id])
+  end
+
   def new
     @physician = Physician.new
   end
 
-  def show
+  def edit
     @physician = Physician.find(params[:id])
   end
 
   def create
     @physician = Physician.new(physician_params)
-    @physician.save
-    redirect_to @physician
+
+    if @physician.save
+      redirect_to @physician
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @physician = Physician.find(params[:id])
+
+    if @physician.update(physician_params)
+      redirect_to @physician
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @physician = Physician.find(params[:id])
+    @physician.destroy
+    redirect_to physicians_path
   end
 
   private
