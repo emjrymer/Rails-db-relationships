@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  resources :physicians
+
   resources :owners do
     resources :dogs
   end

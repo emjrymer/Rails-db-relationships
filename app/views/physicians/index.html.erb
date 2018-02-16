@@ -1,0 +1,15 @@
+<h1>Listing Physicians</h1>
+
+<%= link_to 'Add a New Physician', new_physician_path %>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @physicians.each do |physician| %>
+  <tr>
+    <td><%= physician.name %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>
